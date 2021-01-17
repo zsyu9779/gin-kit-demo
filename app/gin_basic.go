@@ -45,7 +45,7 @@ func Wrapper(handler func(c *gin.Context) error) func(c *gin.Context) {
 				apiException = exception.ServerError()
 			}
 			apiException.Request = c.Request.Method + " "+ c.Request.URL.String()
-			c.JSON(apiException.Code,apiException)
+			c.JSON(apiException.Code,exception.GetMsg(apiException.Code))
 			return
 		}
 

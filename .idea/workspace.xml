@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="" />
+    <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/exception/code.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exception/msg.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gin_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/gin_basic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exception/exception.go" beforeDir="false" afterPath="$PROJECT_DIR$/exception/exception.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,10 +21,14 @@
     </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1mxlSaKOdAZ7Ei5UBmIQ9Ju507r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,6 +44,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/exception" />
       <recent name="$PROJECT_DIR$/router" />
     </key>
   </component>
@@ -45,6 +56,10 @@
     <proxy>http://10.121.1.167:3000</proxy>
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1098" y="120" key="Github.ShareDialog" timestamp="1610873812079">
+      <screen x="-1920" y="-317" width="1920" height="1080" />
+    </state>
+    <state x="-1098" y="120" key="Github.ShareDialog/0.0.1440.900/-1920.-317.1920.1080@-1920.-317.1920.1080" timestamp="1610873812079" />
     <state x="0" y="25" width="1440" height="875" key="SettingsEditor" timestamp="1610541275388">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
