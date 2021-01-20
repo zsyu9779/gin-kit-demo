@@ -3,7 +3,7 @@ package g_rediscache
 import (
 	"errors"
 	"github.com/sirupsen/logrus"
-	"material/util"
+	"gin-kit-demo/util"
 	"math/rand"
 	"time"
 )

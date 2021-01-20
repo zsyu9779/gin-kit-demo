@@ -11,7 +11,7 @@ import (
 	"runtime"
 )
 
-func InitConfig() {
+func InitConfig()error {
 	/*
 		func Caller(skip int) (pc uintptr, file string, line int, ok bool)
 		skip是要提升的堆栈帧数，0-当前函数，1-上一层函数，....
@@ -44,8 +44,8 @@ func InitConfig() {
 		viper.SetConfigType("yml")
 		err = viper.ReadConfig(bytes.NewReader(envConfig))
 		if err != nil {
-			return
+			return nil
 		}
 	}
-	return
+	return nil
 }

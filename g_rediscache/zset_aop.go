@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/go-redis/redis"
 	"github.com/sirupsen/logrus"
-	"material/util"
+	"gin-kit-demo/util"
 	"reflect"
 	"strconv"
 	"time"

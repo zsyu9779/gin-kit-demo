@@ -28,7 +28,6 @@ func ExampleUseGLock() {
 
 func TestUseGLock_BizResult(t *testing.T) {
 	RedisTestSetup()
-
 	cacheKey := "testtest_global_lock_" + strconv.Itoa(getRand())
 	t.Log("cacheKey:", cacheKey)
 
@@ -49,7 +48,6 @@ func TestUseGLock_BizResult(t *testing.T) {
 
 func TestUseGLock_Release(t *testing.T) {
 	RedisTestSetup()
-
 	cacheKey := "testtest_global_lock_" + strconv.Itoa(getRand())
 	t.Log("cacheKey:", cacheKey)
 	go func() {

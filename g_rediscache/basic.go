@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"github.com/sirupsen/logrus"
-	"material/conf"
+	"gin-kit-demo/conf"
 	"math/rand"
 	"reflect"
 	"time"
