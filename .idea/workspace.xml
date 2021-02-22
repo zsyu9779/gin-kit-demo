@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-vue-v1" beforeDir="false" afterPath="$PROJECT_DIR$/blog-vue-v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-vue-v1/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/blog-vue-v1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog-vue-v1/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +21,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/blog-vue-v1" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
