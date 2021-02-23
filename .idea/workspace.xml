@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/arcticleController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/router.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/tagController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-vue-v1" beforeDir="false" afterPath="$PROJECT_DIR$/blog-vue-v1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-vue-v1/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-vue-v1/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blog-vue-v1/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/gin_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/gin_basic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/router.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog-vue-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +25,7 @@
   </component>
   <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/blog-vue-v1" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -54,7 +58,7 @@
       <recent name="$PROJECT_DIR$/router" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager">
     <configuration name="go build gin-kit-demo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="gin-kit-demo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -64,20 +68,6 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/blog-vue-v1/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Go Build.go build gin-kit-demo" />
-      <item itemvalue="npm.dev" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build gin-kit-demo" />

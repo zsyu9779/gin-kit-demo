@@ -1,6 +1,7 @@
 package main
 
 import (
+	"gin-kit-demo/controllers"
 	"gin-kit-demo/conf"
 	"gin-kit-demo/router"
 	"github.com/spf13/pflag"
@@ -12,5 +13,5 @@ func main() {
 	pflag.Parse()
 	viper.BindPFlags(pflag.CommandLine)
 	conf.InitConfig()
-	router.Include()
+	router.Include(controllers.Routers)
 }

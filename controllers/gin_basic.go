@@ -1,4 +1,4 @@
-package app
+package controllers
 
 import (
 	"gin-kit-demo/exception"
