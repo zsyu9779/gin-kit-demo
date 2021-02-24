@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/arcticleController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/router.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/tagController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gin_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/gin_basic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/router.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog-vue-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +41,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="go.sdk" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
