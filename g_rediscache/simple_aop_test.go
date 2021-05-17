@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"reflect"
-"strconv"
-"testing"
-"time"
+	"strconv"
+	"testing"
+	"time"
 )
 
 func ExampleUseSimpleAop() {
@@ -18,9 +18,9 @@ func ExampleUseSimpleAop() {
 
 		return "abc", nil
 	}
-	v1, fromCache, _ := UseSimpleAop(cacheKey, reflect.TypeOf("")).WithExpires(5*time.Second).Then(bizFunc)
+	v1, fromCache, _ := UseSimpleAop(cacheKey, reflect.TypeOf("")).WithExpires(5 * time.Second).Then(bizFunc)
 	fmt.Println(fromCache)
-	v2, fromCache, _ := UseSimpleAop(cacheKey, reflect.TypeOf("")).WithExpires(5*time.Second).Then(bizFunc)
+	v2, fromCache, _ := UseSimpleAop(cacheKey, reflect.TypeOf("")).WithExpires(5 * time.Second).Then(bizFunc)
 	fmt.Println(fromCache)
 	fmt.Println(v1 == v2)
 	fmt.Println(v1)

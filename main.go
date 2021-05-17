@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gin-kit-demo/controllers"
 	"gin-kit-demo/conf"
+	"gin-kit-demo/controllers"
 	"gin-kit-demo/g_rediscache"
 	"gin-kit-demo/model"
 	"gin-kit-demo/router"
@@ -21,7 +21,7 @@ func main() {
 	r := router.Init()
 	defer model.Db.Close()
 	// 初始化gorm
-	model.Init()
+	//model.Init()
 	// 初始化redis
 	g_rediscache.Init()
 	if err := r.Run(":8080"); err != nil {

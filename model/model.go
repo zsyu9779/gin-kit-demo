@@ -34,3 +34,13 @@ func initDatabase() {
 	// 全局禁用表名复数
 	Db.SingularTable(true) // 如果设置为true,`User`的默认表名为`user`,使用`TableName`设置的表名不受影响
 }
+
+func registerModels() {
+	Db.Table("blog_article").AutoMigrate(&Article{})
+	Db.Table("blog_tag").AutoMigrate(&Tag{})
+	Db.Table("blog_auth").AutoMigrate(&Auth{})
+}
+func init()  {
+	initDatabase()
+	registerModels()
+}

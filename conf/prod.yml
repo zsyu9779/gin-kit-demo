@@ -1,0 +1,25 @@
+# production
+app: viper-production
+mysql:
+  uri: root:TUlTpy9w7!2@tcp(10.52.5.45:3306)/material_crawl?parseTime=true
+  # 设置连接池中的最大闲置连接数
+  maxOpenConns: 20
+  # 设置连接池中的最大闲置连接数
+  maxIdleConns: 2
+mysql2:
+  uri: root:TUlTpy9w7!2@tcp(10.52.5.45:3306)/video_task?parseTime=true
+  # 设置连接池中的最大闲置连接数
+  maxOpenConns: 20
+  # 设置连接池中的最大闲置连接数
+  maxIdleConns: 2
+log:
+redis:
+  mode: cluster
+  conn: redis-f14f7ca-dcs-mv-cluster.dcs.huaweicloud.com:6379
+  password:
+  conn_timeout: 2000
+  so_timeout: 4000
+  min_idle_conns: 10
+  max_retries: 3
+  sentinel:
+    master:

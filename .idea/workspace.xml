@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/default.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/constant/cacheKey.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/article.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/tag.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/article_service/article.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/article_service/article_poster.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/arcticleController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/arcticleController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/g_rediscache/simple_aop_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/g_rediscache/simple_aop_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/WechatIMG9.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +48,18 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/service" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service" />
+      <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$/conf" />
       <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/util" />
-      <recent name="$PROJECT_DIR$/middleware" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
