@@ -4,18 +4,10 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-type Model struct {
-	ID         int `gorm:"primary_key" json:"id"`
-	CreatedOn  int `json:"created_on"`
-	ModifiedOn int `json:"modified_on"`
-	DeletedOn  int `json:"deleted_on"`
-}
 type Article struct {
-	Model
-
-	TagID int `json:"tag_id" gorm:"index"`
-	Tag   Tag `json:"tag"`
-
+	Id            int64  `json:"id"`
+	TagID         int    `json:"tag_id" gorm:"index"`
+	Tag           Tag    `json:"tag"`
 	Title         string `json:"title"`
 	Desc          string `json:"desc"`
 	Content       string `json:"content"`
@@ -25,19 +17,25 @@ type Article struct {
 	State         int    `json:"state"`
 }
 
+func GetBlogsByTagId(tagId int64) []Article {
+	var result []Article
+	Db.Raw("select * from blog where id in(select blog_id from where tag_id = ?)",tagId).Scan(&result)
+	return result
+}
+
 // ExistArticleByID checks if an article exists based on ID
-func (article *Article)ExistArticleByID(id int) (bool, error) {
+func (article *Article) ExistArticleByID(id int) (bool, error) {
 	err := Db.Select("id").Where("id = ? AND deleted_on = ? ", id, 0).First(&article).Error
 	if err == nil {
-		return true,nil
-	}else if err == gorm.ErrRecordNotFound{
+		return true, nil
+	} else if err == gorm.ErrRecordNotFound {
 		return false, nil
 	}
 	return false, err
 }
 
 // GetArticleTotal gets the total number of articles based on the constraints
-func (article *Article)GetArticleTotal() (int, error) {
+func (article *Article) GetArticleTotal() (int, error) {
 	var count int
 	if err := Db.Model(&article).Where(&article).Count(&count).Error; err != nil {
 		return 0, err
@@ -47,7 +45,7 @@ func (article *Article)GetArticleTotal() (int, error) {
 }
 
 // GetArticles gets a list of articles based on paging constraints
-func (article *Article)GetArticles(pageNum int, pageSize int) ([]*Article, error) {
+func (article *Article) GetArticles(pageNum int, pageSize int) ([]*Article, error) {
 	var articles []*Article
 	err := Db.Preload("Tag").Where(&article).Offset(pageNum).Limit(pageSize).Find(&articles).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
@@ -58,8 +56,8 @@ func (article *Article)GetArticles(pageNum int, pageSize int) ([]*Article, error
 }
 
 // GetArticle Get a single article based on ID
-func (article *Article)GetArticle() (*Article, error) {
-	err := Db.Where("id = ? AND deleted_on = ? ", article.ID, 0).First(&article).Error
+func (article *Article) GetArticle() (*Article, error) {
+	err := Db.Where("id = ? AND deleted_on = ? ", article.Id, 0).First(&article).Error
 	if err != nil && err != gorm.ErrRecordNotFound {
 		return nil, err
 	}

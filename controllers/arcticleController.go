@@ -1,41 +1,12 @@
 package controllers
 
 import (
-	"gin-kit-demo/service/article_service"
+	"gin-kit-demo/service"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
 	"strconv"
 )
 
-func GetArticles(c *gin.Context) {
-	id, _ := strconv.Atoi(c.Param("id"))
-	valid := validation.Validation{}
-	basicHandle := BasicController{Ctx: c}
-
-	if valid.HasErrors() {
-		basicHandle.Ok("failed")
-		return
-	}
-
-	articleService := article_service.Article{ID: id}
-	exists, err := articleService.ExistByID()
-	if err != nil {
-		basicHandle.Ok("failed")
-		return
-	}
-	if !exists {
-		basicHandle.Ok("failed")
-		return
-	}
-
-	article, err := articleService.Get()
-	if err != nil {
-		basicHandle.Ok("failed")
-		return
-	}
-
-	basicHandle.Ok(article)
-}
 func GetArticle(c *gin.Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 	valid := validation.Validation{}
@@ -47,24 +18,16 @@ func GetArticle(c *gin.Context) {
 		return
 	}
 
-	articleService := article_service.Article{ID: id}
-	exists, err := articleService.ExistByID()
-	if err != nil {
-		basicHandle.Ok("failed")
-		return
-	}
-	if !exists {
-		basicHandle.Ok("failed")
-		return
-	}
-
-	article, err := articleService.Get()
+	article, err := service.GetArticleById(int64(id))
 	if err != nil {
 		basicHandle.Ok("failed")
 		return
 	}
 
 	basicHandle.Ok(article)
+}
+func GetArticleList(c *gin.Context) {
+
 }
 func AddArticle(c *gin.Context) {
 

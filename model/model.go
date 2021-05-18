@@ -2,12 +2,14 @@ package model
 
 import (
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"log"
 	"os"
 	"time"
 )
+
 var Db *gorm.DB
 
 func initDatabase() {
@@ -36,11 +38,11 @@ func initDatabase() {
 }
 
 func registerModels() {
-	Db.Table("blog_article").AutoMigrate(&Article{})
-	Db.Table("blog_tag").AutoMigrate(&Tag{})
-	Db.Table("blog_auth").AutoMigrate(&Auth{})
+	Db.Table("article").AutoMigrate(&Article{})
+	Db.Table("tag").AutoMigrate(&Tag{})
+	Db.Table("blog_tag").AutoMigrate(&BlogTag{})
 }
-func init()  {
+func init() {
 	initDatabase()
 	registerModels()
 }
