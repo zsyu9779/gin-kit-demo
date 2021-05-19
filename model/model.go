@@ -1,6 +1,7 @@
 package model
 
 import (
+	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/sirupsen/logrus"
@@ -14,6 +15,7 @@ var Db *gorm.DB
 
 func initDatabase() {
 	var err error
+	fmt.Println(viper.GetString("mysql.uri"))
 	Db, err = gorm.Open("mysql", viper.GetString("mysql.uri"))
 
 	if err != nil {
@@ -42,7 +44,16 @@ func registerModels() {
 	Db.Table("tag").AutoMigrate(&Tag{})
 	Db.Table("blog_tag").AutoMigrate(&BlogTag{})
 }
-func init() {
+func Init() {
 	initDatabase()
 	registerModels()
+}
+func Paginate(page,pageSize int) func(db *gorm.DB) *gorm.DB {
+	return func (db *gorm.DB) *gorm.DB {
+		if page == 0 {
+			page = 1
+		}
+		offset := (page - 1) * pageSize
+		return db.Offset(offset).Limit(pageSize)
+	}
 }

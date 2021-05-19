@@ -18,11 +18,8 @@ func GetArticle(c *gin.Context) {
 		return
 	}
 
-	article, err := service.GetArticleById(int64(id))
-	if err != nil {
-		basicHandle.Ok("failed")
-		return
-	}
+	article:= service.GetArticleById(int64(id))
+
 
 	basicHandle.Ok(article)
 }

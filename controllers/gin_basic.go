@@ -10,7 +10,10 @@ import (
 type BasicController struct {
 	Ctx *gin.Context
 }
-
+type PageReq struct {
+	Size int `json:"size" binding:"required"`
+	Page int `json:"page" binding:"required"`
+}
 
 // 统一返回值
 type ResponseData struct {
@@ -31,12 +34,12 @@ func (t *BasicController) Ok(d interface{}) {
 	return
 }
 
-func Wrapper(handler func(c *gin.Context) error) func(c *gin.Context) {
+func Wrapper(handler func(c *gin.Context)) func(c *gin.Context) {
 	return func(c *gin.Context) {
 		var (
 			err error
 		)
-		err =handler(c)
+		handler(c)
 		if err != nil {
 			var apiException *exception.APIException
 			if h,ok := err.(*exception.APIException); ok {

@@ -19,6 +19,7 @@ func main() {
 	router.Include(controllers.Routers)
 	// 初始化路由
 	r := router.Init()
+	model.Init()
 	defer model.Db.Close()
 	// 初始化gorm
 	//model.Init()
