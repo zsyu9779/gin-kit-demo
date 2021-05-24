@@ -4,14 +4,24 @@ import (
 	"gin-kit-demo/model"
 	"gin-kit-demo/service"
 	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 	"strconv"
 )
 
 var commentService service.CommentService
+
 func GetComments(c *gin.Context) {
-	id, _ := strconv.Atoi(c.Param("id"))
-	result:=commentService.GetComments(int64(id))
-	c.JSONP(200,result)
+	id, e := strconv.Atoi(c.Query("id"))
+	if e != nil {
+		logrus.Error(e)
+		logrus.Info(c.Param("id"))
+	}
+	result := commentService.GetComments(int64(id))
+	//str, err := json.Marshal(result)
+	//if err != nil {
+	//	logrus.Error(err)
+	//}
+	c.JSONP(200, result)
 }
 
 func AddComment(c *gin.Context) {
@@ -32,6 +42,6 @@ func AddComment(c *gin.Context) {
 		ParentCommentId: int64(parentCommentId),
 	}
 	commentService.AddComment(comment)
-	c.JSON(200,0)
+	c.JSON(200, 0)
 
 }

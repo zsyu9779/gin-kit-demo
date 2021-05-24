@@ -1,6 +1,9 @@
 package service
 
-import "gin-kit-demo/model"
+import (
+	"encoding/json"
+	"gin-kit-demo/model"
+)
 
 type CommentService struct {
 
@@ -15,7 +18,8 @@ func (c *CommentService) GetComments(blogId int64) []model.ParentCommentResp {
 	commentList:=comment.GetCommentByBlogId()
 	for _, item := range commentList {
 		var commentWithReply model.ParentCommentResp
-		commentWithReply.Comment = item
+		str, _ := json.Marshal(item)
+		json.Unmarshal(str,&commentWithReply)
 		replyComment := c.HandleReplyComments(item.GetReplyCommentByCommentId())
 		commentWithReply.ReplyComment = replyComment
 		result = append(result, commentWithReply)
@@ -27,7 +31,8 @@ func (c *CommentService) HandleReplyComments(list []model.Comment) []model.Reply
 	var result []model.ReplyCommentResp
 	for _, comment := range list {
 		var replyItem model.ReplyCommentResp
-		replyItem.Comment = comment
+		str, _ := json.Marshal(comment)
+		json.Unmarshal(str,&replyItem)
 		replyItem.ParentComment = comment.GetCommentById(comment.ParentCommentId)
 		result = append(result, replyItem)
 	}

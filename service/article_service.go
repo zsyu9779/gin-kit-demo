@@ -12,13 +12,12 @@ import (
 )
 
 type ArticleService struct {
-
 }
 
 var typeService TypeService
 var userService UserService
 
-func (a *ArticleService)GetArticleById(articleId int64) model.Article {
+func (a *ArticleService) GetArticleById(articleId int64) model.Article {
 	result, _, err := g_rediscache.UseSimpleAop(fmt.Sprintf(constant.BLOG_ARTICLE_BY_ID, articleId), reflect.TypeOf(model.Article{})).
 		WithExpires(time.Hour).
 		WithEmptyExpires(5 * time.Minute).
@@ -35,7 +34,7 @@ func (a *ArticleService)GetArticleById(articleId int64) model.Article {
 
 	return result.(model.Article)
 }
-func (a *ArticleService)GetArticleRespById(articleId int64) model.ArticleResp {
+func (a *ArticleService) GetArticleRespById(articleId int64) model.ArticleResp {
 	article := a.GetArticleById(articleId)
 	var result = model.ArticleResp{
 		Article: article,
@@ -46,15 +45,11 @@ func (a *ArticleService)GetArticleRespById(articleId int64) model.ArticleResp {
 	return result
 }
 
-type ArticleListItem struct {
-	Id           int64  `json:"id"`
-	Title        string `json:"title"`
-	FirstPicture string `json:"firstPicture"`
-	Flag         string `json:"flag"`
-	TypeId       int64  `json:"type_id"`
+func (a *ArticleService) GetArticleList(page, pageSize int) []model.ArticleListItem {
+	return model.FindArticleList(page, pageSize)
 }
 
-func (a *ArticleService)GetArticleListByType(typeId,start,stop int64) []model.ArticleListResp {
+func (a *ArticleService) GetArticleListByType(typeId, start, stop int64) []model.ArticleListResp {
 	result, _, err := g_rediscache.UseSimpleAop(fmt.Sprintf(constant.BLOG_ARTICLE_BY_TYPE, typeId), reflect.TypeOf([]model.ArticleListResp{})).
 		WithExpires(time.Hour).
 		WithEmptyExpires(5 * time.Minute).
@@ -77,7 +72,7 @@ func (a *ArticleService)GetArticleListByType(typeId,start,stop int64) []model.Ar
 	return articleList[start:stop]
 }
 
-func (a *ArticleService)GetArticleListByTag(tagId,start,stop int64) []model.ArticleListResp {
+func (a *ArticleService) GetArticleListByTag(tagId, start, stop int64) []model.ArticleListResp {
 	result, _, err := g_rediscache.UseSimpleAop(fmt.Sprintf(constant.BLOG_ARTICLE_BY_TAG, tagId), reflect.TypeOf([]model.ArticleListResp{})).
 		WithExpires(time.Hour).
 		WithEmptyExpires(5 * time.Minute).
@@ -98,7 +93,7 @@ func (a *ArticleService)GetArticleListByTag(tagId,start,stop int64) []model.Arti
 	return articleList[start:stop]
 }
 
-func (a *ArticleService)GetArticleArchive() map[string][]model.ArticleListResp {
+func (a *ArticleService) GetArticleArchive() map[string][]model.ArticleListResp {
 	years := model.GetDistinctYearFromBlog()
 	result := make(map[string][]model.ArticleListResp)
 	for _, year := range years {
@@ -107,12 +102,12 @@ func (a *ArticleService)GetArticleArchive() map[string][]model.ArticleListResp {
 	}
 	return result
 }
-func (a *ArticleService)GetArticleByYear(year int) []model.ArticleListResp {
+func (a *ArticleService) GetArticleByYear(year int) []model.ArticleListResp {
 	result, _, err := g_rediscache.UseSimpleAop(fmt.Sprintf(constant.BLOG_ARTICLE_BY_TAG, year), reflect.TypeOf([]model.ArticleListResp{})).
 		WithExpires(time.Hour).
 		WithEmptyExpires(5 * time.Minute).
 		Then(func() (interface{}, error) {
-			return model.GetBlogsByYear(year),nil
+			return model.GetBlogsByYear(year), nil
 		})
 	if err != nil {
 		logrus.Error(err)
@@ -120,4 +115,3 @@ func (a *ArticleService)GetArticleByYear(year int) []model.ArticleListResp {
 	}
 	return result.([]model.ArticleListResp)
 }
-

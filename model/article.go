@@ -89,7 +89,7 @@ func (article *Article) FindAllArticles() []ArticleListResp {
 	Db.Find(&result)
 	return result
 }
-func (article *Article) FindArticleList(page, pageSize int) []ArticleListItem {
+func FindArticleList(page, pageSize int) []ArticleListItem {
 	var result []ArticleListItem
 	Db.Scopes(Paginate(page, pageSize)).Find(&result)
 	return result

@@ -19,10 +19,9 @@ func GetArticle(c *gin.Context) {
 		return
 	}
 
-	article:= articleService.GetArticleById(int64(id))
+	article:= articleService.GetArticleRespById(int64(id))
 
-
-	basicHandle.Ok(article)
+	c.JSONP(200,article)
 }
 func GetArticleList(c *gin.Context) {
 

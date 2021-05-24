@@ -44,6 +44,7 @@ func registerModels() {
 	Db.Table("tag").AutoMigrate(&Tag{})
 	Db.Table("blog_tag").AutoMigrate(&BlogTag{})
 	Db.Table("user").AutoMigrate(&User{})
+	Db.Table("comment").AutoMigrate(&Comment{})
 }
 func Init() {
 	initDatabase()
