@@ -7,6 +7,7 @@ import (
 	"strconv"
 )
 
+var articleService service.ArticleService
 func GetArticle(c *gin.Context) {
 	id, _ := strconv.Atoi(c.Param("id"))
 	valid := validation.Validation{}
@@ -18,7 +19,7 @@ func GetArticle(c *gin.Context) {
 		return
 	}
 
-	article:= service.GetArticleById(int64(id))
+	article:= articleService.GetArticleById(int64(id))
 
 
 	basicHandle.Ok(article)

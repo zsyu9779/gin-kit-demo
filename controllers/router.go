@@ -68,8 +68,8 @@ func Routers(e *gin.Engine) {
 	}
 	commentApi := e.Group("api/v1/comment")
 	{
-		commentApi.GET("")
-		commentApi.POST("")
+		commentApi.GET("",Wrapper(GetComments))
+		commentApi.POST("",Wrapper(AddComment))
 	}
 
 }
