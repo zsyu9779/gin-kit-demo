@@ -2,22 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c5d09468-1c09-483a-8861-2644db3c9db3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/tag_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/type_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/type_converter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/comment_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/user_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/arcticleController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/arcticleController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/gin_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/gin_basic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constant/cacheKey.go" beforeDir="false" afterPath="$PROJECT_DIR$/constant/cacheKey.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/tagController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tagController.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/userController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/userController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/g_rediscache/hash_aop_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/g_rediscache/hash_aop_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Type.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/Type.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/article.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/article.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/comment.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/comment.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/comment_easyjson.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/comment_easyjson.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/tag.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/tag.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/routers.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/routers.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/article_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/article_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/tag_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/tag_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,21 +102,5 @@
       </map>
     </environment>
     <proxy>http://10.121.1.167:3000</proxy>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/model/model.go</url>
-          <line>17</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

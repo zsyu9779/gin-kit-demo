@@ -15,9 +15,9 @@ func (* Comment ) UnmarshalEasyJSON(l *jlexer.Lexer) {}
 
 type EasyJSON_exporter_Comment *Comment
 
-func ( CommentResp ) MarshalJSON() ([]byte, error) { return nil, nil }
-func (* CommentResp ) UnmarshalJSON([]byte) error { return nil }
-func ( CommentResp ) MarshalEasyJSON(w *jwriter.Writer) {}
-func (* CommentResp ) UnmarshalEasyJSON(l *jlexer.Lexer) {}
+func (ParentCommentResp) MarshalJSON() ([]byte, error)       { return nil, nil }
+func (*ParentCommentResp) UnmarshalJSON([]byte) error        { return nil }
+func (ParentCommentResp) MarshalEasyJSON(w *jwriter.Writer)  {}
+func (*ParentCommentResp) UnmarshalEasyJSON(l *jlexer.Lexer) {}
 
-type EasyJSON_exporter_CommentResp *CommentResp
+type EasyJSON_exporter_CommentResp *ParentCommentResp

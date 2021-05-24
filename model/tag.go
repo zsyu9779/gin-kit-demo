@@ -12,15 +12,21 @@ type BlogTag struct {
 	TagId int64 `json:"tag_id"`
 }
 
+func GetTagsByArticleId(articleId int64) []Tag {
+	var tags []Tag
+	Db.Raw("select * from tag where id in(select tag_id from blog_tag where blog_id = ?)", articleId).Find(&tags)
+	return tags
+}
+
 func (b *BlogTag) AddBlogTag() {
 	Db.Create(&b)
 }
 
 func (b *BlogTag)Delete()  {
-	Db.Where("blog_id",b.BlogId).Delete(&b)
+	Db.Where("blog_id = ?",b.BlogId).Delete(&b)
 }
 
-func GetAllTags(page,pageSize int) []Tag {
+func GetTagsPage(page,pageSize int) []Tag {
 	var result []Tag
 	Db.Scopes(Paginate(page,pageSize)).Find(&result)
 	return result

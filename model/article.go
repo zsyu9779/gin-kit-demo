@@ -1,5 +1,7 @@
 package model
 
+import "fmt"
+
 type Article struct {
 	Id             int64  `json:"id"`
 	Appreciation   bool   `json:"appreciation"`
@@ -48,9 +50,19 @@ type ArticleListResp struct {
 	User User
 }
 
-func GetBlogsByTagId(tagId int64) []ArticleListItem {
-	var result []ArticleListItem
+func GetBlogsByTagId(tagId int64) []ArticleListResp {
+	var result []ArticleListResp
 	Db.Raw("select * from blog where id in(select blog_id from where tag_id = ?)", tagId).Find(&result)
+	return result
+}
+func GetDistinctYearFromBlog() []string{
+	var result []string
+	Db.Table("article").Raw("SELECT DISTINCT DATE_FORMAT(create_time,\"%Y\") as time from t_blog").Find(&result)
+	return result
+}
+func GetBlogsByYear(year int) []ArticleListResp {
+	var result []ArticleListResp
+	Db.Raw("SELECT * from t_blog where create_time like ?", fmt.Sprintf("%d%",year)).Find(&result)
 	return result
 }
 func (article *Article) AddArticle() error {
@@ -65,15 +77,15 @@ func (article *Article) FindArticleById() error {
 	}
 	return nil
 }
-func (article *Article) FindArticleByTypeId() []ArticleListItem {
-	var result []ArticleListItem
-	if err := Db.Where("type_id <> ?").Find(&article).Error; err != nil {
+func (article *Article) FindArticleByTypeId() []ArticleListResp {
+	var result []ArticleListResp
+	if err := Db.Where("type_id <> ?",article.TypeId).Find(&article).Error; err != nil {
 		return nil
 	}
 	return result
 }
-func (article *Article) FindAllArticles() []ArticleListItem {
-	var result []ArticleListItem
+func (article *Article) FindAllArticles() []ArticleListResp {
+	var result []ArticleListResp
 	Db.Find(&result)
 	return result
 }

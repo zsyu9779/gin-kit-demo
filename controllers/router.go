@@ -5,7 +5,7 @@ import (
 )
 
 func Routers(e *gin.Engine) {
-	tagApi := e.Group("api/v1/tag")
+	tagApi := e.Group("api/v1/tags")
 	{
 		//获取标签列表
 		tagApi.GET("",Wrapper(GetTags))
@@ -29,8 +29,16 @@ func Routers(e *gin.Engine) {
 	}
 	userApi := e.Group("api/v1/user")
 	{
+		userApi.GET("/getuser",Wrapper(GetUser))
+
 		//登录
 		userApi.POST("/login",Wrapper(Login))
+
+
+		userApi.GET("/logout",Wrapper(Logout))
+
+		userApi.GET("/islogin",Wrapper(IsLogin))
+
 		//获取用户列表
 		userApi.GET("/",Wrapper(GetUsers))
 		//新建用户
@@ -40,7 +48,7 @@ func Routers(e *gin.Engine) {
 		//删除指定用户
 		userApi.DELETE("/:id",Wrapper(DeleteUser))
 	}
-	articleApi := e.Group("api/v1/articles")
+	articleApi := e.Group("api/v1/blog")
 	{
 		//获取文章列表
 		articleApi.GET("/list", Wrapper(GetArticleList))
@@ -52,8 +60,6 @@ func Routers(e *gin.Engine) {
 		articleApi.PUT("", Wrapper(EditArticle))
 		//删除指定文章
 		articleApi.DELETE("", Wrapper(DeleteArticle))
-		//生成文章海报
-		articleApi.POST("/poster/generate", Wrapper(GenerateArticlePoster))
 	}
 	archiveApi := e.Group("api/v1/archive")
 	{

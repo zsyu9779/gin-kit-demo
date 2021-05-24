@@ -25,7 +25,7 @@ func main() {
 	//model.Init()
 	// 初始化redis
 	g_rediscache.Init()
-	if err := r.Run(":8080"); err != nil {
+	if err := r.Run(":8088"); err != nil {
 		fmt.Printf("startup service failed, err:%v\n\n", err)
 	}
 }

@@ -6,7 +6,7 @@ type TagService struct {
 }
 
 func (t *TagService) GetTags(pageSize, page int) []model.Tag {
-	return model.GetAllTags(page, pageSize)
+	return model.GetTagsPage(page, pageSize)
 }
 
 func (t *TagService) GetTag(tagId int64) *model.Tag {

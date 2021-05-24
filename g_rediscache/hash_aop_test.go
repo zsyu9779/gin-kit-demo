@@ -1,6 +1,6 @@
 package g_rediscache
 
-import (
+import  (
 	"fmt"
 	"github.com/astaxie/beego"
 	"reflect"
